@@ -105,7 +105,7 @@ class Git(ParallelNode):
             # Checkout
             try:
                 host.run("git checkout '%s'" % esc1(commit))
-                host.run("git submodule update --init") # Also load submodules.
+                host.run("git submodule update --init --remote") # Also load submodules.
             finally:
                 # Pop stash
                 try:
